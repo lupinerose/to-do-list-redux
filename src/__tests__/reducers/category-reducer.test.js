@@ -19,7 +19,6 @@ describe("categoryReducer", () => {
             name: name,
             id: id
         }
-        console.log(action)
         expect(categoryReducer({}, action)).toEqual({
             [id] : {
                 name: name,

@@ -1,10 +1,20 @@
 import React from 'react';
 import { connect } from 'react-redux'
+import { v4 } from 'uuid';
 
 function NewCategoryForm() {
+    let _name = null
 
-    function handleFormSubmission() {
-        
+    function handleFormSubmission(event) {
+        const { dispatch } = props;
+        event.preventDefault()
+        const action = {
+            type: 'ADD_CATEGORY',
+            name: _name.value,
+            id: v4()
+        };
+        dispatch(action);
+        _name.value = ''
     }
 
     return (

@@ -10,10 +10,14 @@ import { Provider } from 'react-redux';
 
 const store = createStore(categoryReducer);
 
+let unsubscribe = store.subscribe(() =>
+    console.log(store.getState())
+)
+
 ReactDOM.render(
     <HashRouter>
-        <Provider>
-            <App  store={store}/>
+        <Provider store={store}>
+            <App />
         </Provider>
     </HashRouter>, 
     document.getElementById('root'));
