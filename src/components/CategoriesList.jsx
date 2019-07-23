@@ -1,6 +1,6 @@
 import React from 'react';
 
-function ToDoItem() {
+function CategoriesList() {
   return (
     <div>
       
@@ -8,4 +8,4 @@ function ToDoItem() {
   );
 }
 
-export default ToDoItem;
+export default CategoriesList;
