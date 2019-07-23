@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux'
 
 function NewCategoryForm() {
 
@@ -23,4 +24,4 @@ function NewCategoryForm() {
     );
 }
 
-export default NewCategoryForm;
+export default connect()(NewCategoryForm);
