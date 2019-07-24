@@ -11,16 +11,6 @@ function NewCategoryForm(props) {
         const action = {
             type: 'ADD_CATEGORY',
             name: _name.value,
-            todos: {
-            0: {
-                task: 'eat',
-                isComplete: false
-            },
-            1: {
-                task:  'drink',
-                isComplete: false
-            }
-        },
             id: v4()
         };
         dispatch(action);

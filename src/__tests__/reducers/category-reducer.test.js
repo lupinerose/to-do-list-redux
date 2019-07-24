@@ -5,16 +5,6 @@ describe("categoryReducer", () => {
     let action;
     const sampleCategoryData = {
         name: 'Job Search',
-        todos: {
-            0: {
-                task: 'eat',
-                isComplete: false
-            },
-            1: {
-                task:  'drink',
-                isComplete: false
-            }
-        },
         id: 0
     }
 
@@ -23,19 +13,18 @@ describe("categoryReducer", () => {
     })
 
     test('Should add new category data to categoryList', () => {
-        const { name, todos, id } = sampleCategoryData;
+        const { name, id } = sampleCategoryData;
         action = {
             type: 'ADD_CATEGORY',
             name: name,
-            todos: todos,
             id: id
         }
         expect(categoryReducer({}, action)).toEqual({
             [id] : {
                 name: name,
-                todos: todos,
                 id: id
             }
         })
     })
+
 })

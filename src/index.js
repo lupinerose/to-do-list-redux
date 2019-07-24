@@ -5,10 +5,10 @@ import App from './components/App';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { createStore } from 'redux';
-import categoryReducer from './reducers/category-reducer';
+import rootReducer from './reducers/index';
 import { Provider } from 'react-redux';
 
-const store = createStore(categoryReducer);
+const store = createStore(rootReducer);
 
 let unsubscribe = store.subscribe(() =>
     console.log(store.getState())

@@ -1,7 +1,8 @@
 import React from 'react';
 import CategoriesList from './CategoriesList';
 import NewCategoryForm from './NewCategoryForm';
-import Category from './Category';
+import CategoryDetail from './CategoryDetail';
+import NewToDoForm from './NewToDoForm';
 import { Switch, Route, withRouter } from 'react-router-dom';
 import './styles.css';
 import Header from './Header';
@@ -17,7 +18,9 @@ function App(props) {
       <Switch>
         <Route exact path='/' render={()=><CategoriesList categoryList={props.categoryList}/>} />
         <Route exact path='/new-category' render={()=><NewCategoryForm />} />
-        <Route path='/categories/:categoryName' render={()=><Category />}/>
+        {/* <Route path={`/:categoryName`} render={({match})=><Category />}/> */}
+        <Route exact path={`/:categoryName/:categoryId`} component={CategoryDetail} />
+        <Route exact path={`/:categoryName/:categoryId/new-to-do`} component={NewToDoForm} />
       </Switch>
     </div>
   );
@@ -25,7 +28,7 @@ function App(props) {
 
 const mapStateToProps = state => {
   return {
-    categoryList: state
+    categoryList: state.categoryList
   }
 }
 

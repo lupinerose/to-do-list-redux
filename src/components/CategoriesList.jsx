@@ -1,9 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Category from './Category'
+import Category from './Category';
 
 function CategoriesList(props) {
-  
   return (
     <div>
       <h2>Categories</h2>
@@ -11,9 +10,9 @@ function CategoriesList(props) {
         {
           var category = props.categoryList[categoryId]
           return <Category name={category.name} 
-            key={categoryId}
-            categoryId={categoryId}/>
-        })}
+          id={categoryId}
+          key={categoryId} />
+          })}
     </div>
   );
 }

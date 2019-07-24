@@ -1,22 +1,24 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 function Category(props) {
-
-    function handleRedirectToDetail(categoryId) {
-        console.log(categoryId)
-    }
-    
+  console.log(props)
   return (
     <div>
-        <h3 onClick={() => handleRedirectToDetail(props.categoryId)}>- {props.name}</h3>
+      <Link to={`/${props.name}/${props.id}`}>{props.name}</Link>
+      <br></br> 
     </div>
   );
 }
 
 export default Category;
 
-Category.propTypes = {
-    name: PropTypes.string,
-    categoryId: PropTypes.string
-}
+// Category.propTypes = {
+//   categoryList: PropTypes.object,
+//   currentRouterPath: PropTypes.string.isRequired
+// }
+
+
+
+
