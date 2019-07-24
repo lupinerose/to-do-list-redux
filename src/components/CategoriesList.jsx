@@ -1,11 +1,25 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import Category from './Category'
 
-function CategoriesList() {
+function CategoriesList(props) {
+  
   return (
     <div>
-      
+      <h2>Categories</h2>
+      {Object.keys(props.categoryList).map(categoryId =>
+        {
+          var category = props.categoryList[categoryId]
+          return <Category name={category.name} 
+            key={categoryId}
+            categoryId={categoryId}/>
+        })}
     </div>
   );
 }
 
 export default CategoriesList;
+
+CategoriesList.propTypes = {
+  categoryList: PropTypes.object
+}
